@@ -47,8 +47,8 @@ def get_SL(experiment_name,Data_Path):
     # TEST SET
     ########################
     
-    PSNR_TEST_INIT = 27.6847
-    SSIM_TEST_INIT =  0.5153
+    PSNR_TEST_INIT = 27.6108
+    SSIM_TEST_INIT = 0.6368
     
     PSNR_TEST = torch.load(Data_Path + 'SUPERVISED_LEARNING_TEST/PSNR_TEST'  )[2,:].numpy()
     SSIM_TEST = torch.load(Data_Path + 'SUPERVISED_LEARNING_TEST/SSIM_TEST'  )[2,:].numpy()
@@ -77,15 +77,17 @@ def get_TL(experiment_name,Data_Path,FT_LR):
     LOSS = torch.load(LOSS_PATH).numpy()
     
     PSNR_FT = torch.load(PSNR_PATH + 'FT_PSNR_Step_500' )[2,9::10].numpy()
-    PSNR_FT_INIT = 27.1479
+    PSNR_FT_INIT = 27.1839
     SSIM_FT = torch.load(SSIM_PATH + 'FT_SSIM_Step_500' )[2,9::10].numpy()
-    SSIM_FT_INIT = 0.6611
+    SSIM_FT_INIT = 0.5772
+
     
     
     PSNR_TEST = torch.load(PSNR_PATH + 'VAL_PSNR_Step_500' )[2,9::10].numpy()
-    PSNR_TEST_INIT = 27.6847
+    PSNR_TEST_INIT =  27.6108
     SSIM_TEST = torch.load(SSIM_PATH + 'VAL_SSIM_Step_500' )[2,9::10].numpy()
-    SSIM_TEST_INIT = 0.5153
+    SSIM_TEST_INIT = 0.6368
+
     
     
     
@@ -132,8 +134,8 @@ col_names_TL= ['Experiment Name','','Initial PSNR (FT Set)',
 # Specify LR of Experiments here
 # =============================================================================
 
-SL_LR = '0.001'
-FT_LR = '0.001'
+SL_LR = '0.0001'
+FT_LR = '0.0001'
 
 
 # =============================================================================
